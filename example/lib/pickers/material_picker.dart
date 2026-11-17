@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:material_ui/material_ui.dart';
 
 class MaterialColorPickerExample extends StatefulWidget {
   const MaterialColorPickerExample({
@@ -54,7 +54,7 @@ class _MaterialColorPickerExampleState extends State<MaterialColorPickerExample>
               ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: widget.pickerColor,
-                shadowColor: widget.pickerColor.withOpacity(1),
+                shadowColor: widget.pickerColor.withValues(alpha: 1),
                 elevation: 10,
               ),
             ),
@@ -86,7 +86,7 @@ MaterialPicker(
               child: Icon(Icons.code, color: useWhiteForeground(widget.pickerColor) ? Colors.white : Colors.black),
               style: ElevatedButton.styleFrom(
                 backgroundColor: widget.pickerColor,
-                shadowColor: widget.pickerColor.withOpacity(1),
+                shadowColor: widget.pickerColor.withValues(alpha: 1),
                 elevation: 10,
               ),
             ),

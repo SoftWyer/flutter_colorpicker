@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:material_ui/material_ui.dart';
+
+import './pickers/block_picker.dart';
 import './pickers/hsv_picker.dart';
 import './pickers/material_picker.dart';
-import './pickers/block_picker.dart';
 
 void main() => runApp(const MaterialApp(home: MyApp()));
 

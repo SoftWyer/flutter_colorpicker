@@ -3,7 +3,7 @@
 library material_colorpicker;
 
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'utils.dart';
 
 // The Color Picker which contains Material Design Color Palette.
@@ -85,7 +85,7 @@ class _MaterialPickerState extends State<MaterialPicker> {
   void initState() {
     for (List<Color> _colors in _colorTypes) {
       _shadingTypes(_colors).forEach((Map<Color, String> color) {
-        if (widget.pickerColor.value == color.keys.first.value) {
+        if (widget.pickerColor.toARGB32() == color.keys.first.toARGB32()) {
           return setState(() {
             _currentColorType = _colors;
             _currentShading = color.keys.first;
@@ -232,7 +232,7 @@ class _MaterialPickerState extends State<MaterialPicker> {
                             child: Align(
                               alignment: Alignment.centerRight,
                               child: Text(
-                                '#${(_color.value.toRadixString(16).padLeft(8, '0')).substring(2).toUpperCase()}  ',
+                                '#${(_color.toARGB32().toRadixString(16).padLeft(8, '0')).substring(2).toUpperCase()}  ',
                                 style: TextStyle(
                                   color: useWhiteForeground(_color) ? Colors.white : Colors.black,
                                   fontWeight: FontWeight.bold,
